@@ -154,7 +154,7 @@ def listar_alunos():
             session.rollback()
             print(f"Ocorreu um erro {erro}")
 
-istar_alunos()
+listar_alunos()
 
 
 
