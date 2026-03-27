@@ -100,5 +100,4 @@ def cadastrar_aluno():
 
 cadastrar_aluno()
 
-
-
+#Listar
