@@ -123,6 +123,27 @@ def adicionar_curso():
             session.rollback()
             print(f"Ocorreu um erro {erro}")
 
-adicionar_curso()
+# adicionar_curso()
+
+#Listar
+def listar_cursos():
+    with Session() as session:
+        try:
+            #Como pegar todos os registros da tabela?
+            todos_cursos = session.query(Curso).all()
+            for curso in todos_cursos:
+                print(f"\n--- Curso {curso.nome} ---")
+                print(curso.nome)
+                for aluno in curso.alunos:
+                    print(aluno.nome)
+        except Exception as erro:
+            session.rollback()
+            print(f"Ocorreu um erro {erro}")
+
+listar_cursos()
+
+#Atualizar
+
+#Deletar
 
 
