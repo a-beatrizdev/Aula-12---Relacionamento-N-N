@@ -140,7 +140,25 @@ def listar_cursos():
             session.rollback()
             print(f"Ocorreu um erro {erro}")
 
-listar_cursos()
+# listar_cursos()
+
+def listar_alunos():
+    with Session() as session:
+        try:
+            #Como pegar todos os registros da tabela?
+            todos_alunos = session.query(Aluno).all()
+            for aluno in todos_alunos:
+                nomes_cursos = [curso.nome for curso in aluno.cursos]
+                print(f"Nome: {aluno.nome} - Cursos: {nome_cursos}")
+        except Exception as erro:
+            session.rollback()
+            print(f"Ocorreu um erro {erro}")
+
+istar_alunos()
+
+
+
+
 
 #Atualizar
 
